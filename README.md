@@ -1,16 +1,22 @@
-# flutter_foundations_knowledge
+# Flutter Foundations Knowledge
 
-A new Flutter project.
+Practical lessons in flutter learning. Flutter Foundations Course material is used (Code with Andrea). 
 
-## Getting Started
+## Professional Application Development
 
-This project is a starting point for a Flutter application.
+Extensive coverage of:
 
-A few resources to get you started if this is your first Flutter project:
+- State Management with Riverpod
+- Automated testing
+- DDD & App Architecture
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Step-by-step development of a real application to solve problems as they arise:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Product Listing
+- Product Details
+- Shopping Cart
+- Sign in Flows
+
+
+
+- [complete-flutter-course](https://github.com/bizz84/complete-flutter-course)
