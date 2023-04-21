@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_foundations_knowledge/src/app.dart';
 
-// void main(List<String> args) {
-//   runApp(const MyApp());
-// }
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // * For more info on error handling, see:

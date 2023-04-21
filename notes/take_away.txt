@@ -1,0 +1,3 @@
+1, Use the Widget Inspector (DevTools)
+2, Composition & reusable widgets
+3, Making apps responsive (without 3rd party packages)

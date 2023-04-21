@@ -1,0 +1,11 @@
+Localization:
+
+    Easier to add at the beginning of a new project
+
+    'flutter create -t skeleton' will enable localization by devault
+
+
+hardcoded => This is only useful to search for strings to be localized later (using ARB files)
+
+
+Code with Andrea https://codewithandrea.com/articles/flutter-localization-build-context-extension/

@@ -1,0 +1,8 @@
+Project structure: 
+    
+    Feature-first
+
+        All widgets that belong to a certain features are grouped in the same folder
+
+
+Code with Andrea https://codewithandrea.com/articles/flutter-project-structure/

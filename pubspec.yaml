@@ -24,15 +24,15 @@ dev_dependencies:
   flutter_lints: ^2.0.1
 
 # Custom app icon. For more info see: https://pub.dev/packages/flutter_launcher_icons
-flutter_icons:
-  ios: true
-  android: true
-  remove_alpha_ios: true
-  image_path_ios: "assets/app-icon.png"
-  image_path_android: "assets/app-icon.png"
-  # https://github.com/fluttercommunity/flutter_launcher_icons/issues/144
-  adaptive_icon_background: "assets/app-icon-background.png"
-  adaptive_icon_foreground: "assets/app-icon-foreground.png"
+# flutter_icons:
+#   ios: true
+#   android: true
+#   remove_alpha_ios: true
+#   image_path_ios: "assets/app-icon.png"
+#   image_path_android: "assets/app-icon.png"
+#   # https://github.com/fluttercommunity/flutter_launcher_icons/issues/144
+#   adaptive_icon_background: "assets/app-icon-background.png"
+#   adaptive_icon_foreground: "assets/app-icon-foreground.png"
 
 
 flutter:
@@ -43,4 +43,5 @@ flutter:
 
   assets:
     # Add all product images
+    - assets/images/
     - assets/products/
