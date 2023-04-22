@@ -1,15 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+// ignore_for_file: depend_on_referenced_packages
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 import 'package:flutter_foundations_knowledge/src/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
   // * For more info on error handling, see:
   // * https://docs.flutter.dev/testing/errors
   await runZonedGuarded(() async {
-    // * Entry point of the app
     runApp(const MyApp());
 
     // * This code will present some error UI if any uncaught exception happens

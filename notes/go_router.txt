@@ -1,0 +1,55 @@
+Navigation and routing with GoRouter
+
+https://pub.dev/packages/go_router
+
+Goals:
+    Learn about declarative routing
+    Become familiar with GoRouter APIs
+    Migrate existing app from Nav 1.0 to GoRouter
+    Learn a few tricks along the way
+
+
+Section Outline:
+    Navigator 1.0 and its limitations
+    How Navigation 2.0 (Router API) solves this
+    Why GoRouter is 'better' than Navigator 2.0
+        Install & configure GoRouter
+        Work with routes and sub-routes
+        Navigation using 'go' and 'push'
+        GoRouterHelper extension
+        Routing with parameters & error handling
+
+
+    
+Navigator 1.0 and its limitations:
+    Could all routes be defined in one place?
+        (important as the app becomes bigger)
+    
+    Named Routes solve this problem https://docs.flutter.dev/cookbook/navigation/named-routes
+        Benefit: Centralize all route definitions in one placd
+        Easier to manage as the app becomes bigger
+
+    
+    
+Routing by URL and redirects are the 'normal' way of doing navigation on web
+    Only available with flutter routing APIs (Navigator 2.0)
+    also needed for Deep Linking
+
+    Navigator 2.0 is very capable
+        But hard to use and doesn't scale well
+
+
+Andrea recommend GoRouter:
+    Minimal, easy to use API
+    Outstanding documentation
+    Maintained by the Flutter team
+
+
+-------------------------------------------------------------------------------
+
+We have 2 options
+
+    1, Implement RouterConfig by hand
+    2, Use GoRouter instead
+
+We can migrate from Navigator 1.0 to GoRouter incrementally!

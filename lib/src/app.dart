@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_foundations_knowledge/src/features/product_list/product_list_screen.dart';
+import 'package:flutter_foundations_knowledge/src/routing/app_router.dart';
 import 'package:flutter_foundations_knowledge/src/localization/string_hardcoded.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,10 +8,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       restorationScopeId: 'app',
-      home: const ProductsListScreen(),
+      routerConfig: goRouter,
       onGenerateTitle: (BuildContext context) => 'My Shop'.hardcoded,
       theme: ThemeData(
         primarySwatch: Colors.grey,
