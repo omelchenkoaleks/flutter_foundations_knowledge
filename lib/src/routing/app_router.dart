@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_foundations_knowledge/src/features/shopping_cart/shopping_cart_screen.dart';
@@ -13,7 +15,11 @@ final goRouter = GoRouter(
       routes: [
         GoRoute(
           path: 'cart',
-          builder: (context, state) => const ShoppingCartScreen(),
+          pageBuilder: (context, state) => MaterialPage(
+            key: state.pageKey,
+            fullscreenDialog: true,
+            child: const ShoppingCartScreen(),
+          ),
         ),
       ],
     ),
