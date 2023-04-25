@@ -9,16 +9,26 @@ import 'package:flutter_foundations_knowledge/src/features/order_list/orders_lis
 import 'package:flutter_foundations_knowledge/src/features/shopping_cart/shopping_cart_screen.dart';
 import 'package:flutter_foundations_knowledge/src/features/product_list/product_list_screen.dart';
 
+enum AppRoute {
+  home,
+  cart,
+  orders,
+  account,
+  signIn,
+}
+
 final goRouter = GoRouter(
   initialLocation: '/',
   debugLogDiagnostics: true,
   routes: [
     GoRoute(
       path: '/',
+      name: AppRoute.home.name,
       builder: (context, state) => const ProductsListScreen(),
       routes: [
         GoRoute(
           path: 'cart',
+          name: AppRoute.cart.name,
           pageBuilder: (context, state) => MaterialPage(
             key: state.pageKey,
             fullscreenDialog: true,
@@ -27,6 +37,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'orders',
+          name: AppRoute.orders.name,
           pageBuilder: (context, state) => MaterialPage(
             key: state.pageKey,
             fullscreenDialog: true,
@@ -35,6 +46,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'account',
+          name: AppRoute.account.name,
           pageBuilder: (context, state) => MaterialPage(
             key: state.pageKey,
             fullscreenDialog: true,
@@ -43,6 +55,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'signIn',
+          name: AppRoute.signIn.name,
           pageBuilder: (context, state) => MaterialPage(
             key: state.pageKey,
             fullscreenDialog: true,

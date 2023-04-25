@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_foundations_knowledge/src/routing/app_router.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/action_text_button.dart';
 import 'package:flutter_foundations_knowledge/src/constants/breakpoints.dart';
 import 'package:flutter_foundations_knowledge/src/features/home_app_bar/more_menu_button.dart';
@@ -35,18 +36,18 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
             ActionTextButton(
               key: MoreMenuButton.ordersKey,
               text: 'Orders'.hardcoded,
-              onPressed: () => context.go('/orders'),
+              onPressed: () => context.goNamed(AppRoute.orders.name),
             ),
             ActionTextButton(
               key: MoreMenuButton.accountKey,
               text: 'Account'.hardcoded,
-              onPressed: () => context.go('/account'),
+              onPressed: () => context.goNamed(AppRoute.account.name),
             ),
           ] else
             ActionTextButton(
               key: MoreMenuButton.signInKey,
               text: 'Sign In'.hardcoded,
-              onPressed: () => context.go('/signIn'),
+              onPressed: () => context.goNamed(AppRoute.signIn.name),
             )
         ],
       );
