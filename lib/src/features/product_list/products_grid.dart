@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_foundations_knowledge/src/routing/app_router.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
 import 'package:flutter_foundations_knowledge/src/features/product_page/product_screen.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
 import 'package:flutter_foundations_knowledge/src/constants/test_products.dart';
 import 'package:flutter_foundations_knowledge/src/features/product_list/product_card.dart';
 import 'package:flutter_foundations_knowledge/src/localization/string_hardcoded.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductsGrid extends StatelessWidget {
   const ProductsGrid({Key? key}) : super(key: key);
@@ -29,10 +31,9 @@ class ProductsGrid extends StatelessWidget {
               final product = products[index];
               return ProductCard(
                 product: product,
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => ProductScreen(productId: product.id),
-                  ),
+                onPressed: () => context.goNamed(
+                  AppRoute.product.name,
+                  params: {'id': product.id},
                 ),
               );
             },

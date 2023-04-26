@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_foundations_knowledge/src/features/product_page/product_screen.dart';
 import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_state.dart';
 import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_screen.dart';
 import 'package:flutter_foundations_knowledge/src/features/account/account_screen.dart';
@@ -11,6 +12,7 @@ import 'package:flutter_foundations_knowledge/src/features/product_list/product_
 
 enum AppRoute {
   home,
+  product,
   cart,
   orders,
   account,
@@ -26,6 +28,14 @@ final goRouter = GoRouter(
       name: AppRoute.home.name,
       builder: (context, state) => const ProductsListScreen(),
       routes: [
+        GoRoute(
+          path: 'product/:id',
+          name: AppRoute.product.name,
+          builder: (context, state) {
+            final productId = state.params['id']!;
+            return ProductScreen(productId: productId);
+          },
+        ),
         GoRoute(
           path: 'cart',
           name: AppRoute.cart.name,
