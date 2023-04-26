@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
+
 import 'package:flutter_foundations_knowledge/src/common_widgets/custom_text_button.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
-import 'package:flutter_foundations_knowledge/src/features/leave_review_page/leave_review_screen.dart';
 import 'package:flutter_foundations_knowledge/src/localization/string_hardcoded.dart';
 import 'package:flutter_foundations_knowledge/src/models/purchase.dart';
+import 'package:flutter_foundations_knowledge/src/routing/app_router.dart';
 import 'package:flutter_foundations_knowledge/src/utils/date_formatter.dart';
 
 class LeaveReviewAction extends StatelessWidget {
@@ -39,11 +41,9 @@ class LeaveReviewAction extends StatelessWidget {
                   .textTheme
                   .bodyText1!
                   .copyWith(color: Colors.green[700]),
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => LeaveReviewScreen(productId: productId),
-                ),
+              onPressed: () => context.goNamed(
+                AppRoute.leaveReview.name,
+                params: {'id': productId},
               ),
             ),
           ),
