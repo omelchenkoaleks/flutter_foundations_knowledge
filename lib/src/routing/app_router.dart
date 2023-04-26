@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_foundations_knowledge/src/features/not_found/not_found_screen.dart';
 import 'package:flutter_foundations_knowledge/src/features/product_page/product_screen.dart';
 import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_state.dart';
 import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_screen.dart';
@@ -77,4 +78,5 @@ final goRouter = GoRouter(
       ],
     ),
   ],
+  errorBuilder: (context, state) => const NotFoundScreen(),
 );
