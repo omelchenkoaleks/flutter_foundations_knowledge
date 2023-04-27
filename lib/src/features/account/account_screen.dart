@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_foundations_knowledge/src/common_widgets/action_text_button.dart';
+import 'package:flutter_foundations_knowledge/src/common_widgets/alert_dialogs.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_center.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
 import 'package:flutter_foundations_knowledge/src/localization/string_hardcoded.dart';
@@ -18,8 +19,16 @@ class AccountScreen extends StatelessWidget {
           ActionTextButton(
             text: 'Logout'.hardcoded,
             onPressed: () async {
-              // TODO: Sign out
-              Navigator.of(context).pop();
+              final logout = await showAlertDialog(
+                context: context,
+                title: 'Are you sure'.hardcoded,
+                cancelActionText: 'Cancel'.hardcoded,
+                defaultActionText: 'Logout'.hardcoded,
+              );
+              if (logout == true) {
+                // TODO: Sign out the user
+                Navigator.of(context).pop();
+              }
             },
           ),
         ],
