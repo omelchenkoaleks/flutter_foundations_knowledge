@@ -1,4 +1,4 @@
-import 'package:flutter_foundations_knowledge/src/models/product.dart';
+import 'package:flutter_foundations_knowledge/src/features/products/domain/product.dart';
 
 const kTestProducts = [
   Product(

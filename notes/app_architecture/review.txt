@@ -1,0 +1,13 @@
+App Architecture
+    Think about this early on (and save time later)
+
+Design Patterns:
+    MVC, MVP, MVVM, etc...
+
+Clean Architecture
+    (rules and principles to architect complex system)
+
+Real challenge
+    Understand unique features and components in your app
+    Define clear contracts and boundaries
+    

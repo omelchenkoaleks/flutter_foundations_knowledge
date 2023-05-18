@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_foundations_knowledge/src/features/checkout/checkout_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/leave_review_page/leave_review_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/not_found/not_found_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/product_page/product_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_state.dart';
-import 'package:flutter_foundations_knowledge/src/features/sign_in/email_password_sign_in_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/account/account_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/order_list/orders_list_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/shopping_cart/shopping_cart_screen.dart';
-import 'package:flutter_foundations_knowledge/src/features/product_list/product_list_screen.dart';
+import 'package:flutter_foundations_knowledge/src/routing/not_found_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/checkout/presentation/checkout_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/reviews/presentation/leave_review_screen/leave_review_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/products/presentation/product_screen/product_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/authentication/presentation/sign_in/email_password_sign_in_state.dart';
+import 'package:flutter_foundations_knowledge/src/features/authentication/presentation/sign_in/email_password_sign_in_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/authentication/presentation/account/account_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/orders/presentation/order_list/orders_list_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/cart/presentation/shopping_cart/shopping_cart_screen.dart';
+import 'package:flutter_foundations_knowledge/src/features/products/presentation/products_list/product_list_screen.dart';
 
 enum AppRoute {
   home,
@@ -26,7 +26,7 @@ enum AppRoute {
 
 final goRouter = GoRouter(
   initialLocation: '/',
-  debugLogDiagnostics: true,
+  debugLogDiagnostics: false,
   routes: [
     GoRoute(
       path: '/',

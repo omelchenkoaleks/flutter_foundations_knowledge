@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_foundations_knowledge/src/features/checkout/payment/payment_button.dart';
-import 'package:flutter_foundations_knowledge/src/features/shopping_cart/shopping_cart_item.dart';
-import 'package:flutter_foundations_knowledge/src/features/shopping_cart/shopping_cart_items_builder.dart';
-import 'package:flutter_foundations_knowledge/src/models/item.dart';
+import 'package:flutter_foundations_knowledge/src/features/cart/presentation/shopping_cart/shopping_cart_item.dart';
+import 'package:flutter_foundations_knowledge/src/features/cart/presentation/shopping_cart/shopping_cart_items_builder.dart';
+import 'package:flutter_foundations_knowledge/src/features/cart/domain/item.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({Key? key}) : super(key: key);

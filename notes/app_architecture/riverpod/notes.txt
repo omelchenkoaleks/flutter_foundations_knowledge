@@ -1,0 +1,19 @@
+Separation of concerns:
+
+When writing new code, ask:
+--- Which layer should it belong to?
+
+Regardless of app architecture and design patterns, we should define clear contracts and boundaries.
+--- Without them, code becomes unmaintainable.
+
+Domain-Driven Design (DDD) helps us develop complex software projects.
+
+
+
+When Andrea built this app, he made a mistake:
+
+    --- mistake --- Focus too much on the UI before choosing a good project structure!
+
+    Features != Screens
+
+    Features are functional requirements that help the user complete a certain task!
