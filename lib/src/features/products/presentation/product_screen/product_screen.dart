@@ -5,6 +5,7 @@ import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_cent
 import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
 import 'package:flutter_foundations_knowledge/src/constants/test_products.dart';
+import 'package:flutter_foundations_knowledge/src/features/products/data/fake_products_repository.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/presentation/home_app_bar/home_app_bar.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/empty_placeholder_widget.dart';
 import 'package:flutter_foundations_knowledge/src/features/cart/presentation/add_to_cart/add_to_cart_widget.dart';
@@ -22,8 +23,7 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Read from data source
-    final product =
-        kTestProducts.firstWhere((product) => product.id == productId);
+    final product = FakeProductsRepository.instance.getProduct(productId);
     return Scaffold(
       appBar: const HomeAppBar(),
       body: product == null
