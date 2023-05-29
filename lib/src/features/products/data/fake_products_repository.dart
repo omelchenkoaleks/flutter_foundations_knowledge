@@ -4,9 +4,6 @@ import 'package:flutter_foundations_knowledge/src/constants/test_products.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/domain/product.dart';
 
 class FakeProductsRepository {
-  FakeProductsRepository._();
-  static FakeProductsRepository instance = FakeProductsRepository._();
-
   final List<Product> _products = kTestProducts;
 
   List<Product> getProductsList() {
@@ -32,5 +29,5 @@ class FakeProductsRepository {
 }
 
 final productsPepositoryProvider = Provider<FakeProductsRepository>((ref) {
-  return;
+  return FakeProductsRepository();
 });

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:flutter_foundations_knowledge/src/common_widgets/custom_image.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_center.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
-import 'package:flutter_foundations_knowledge/src/constants/test_products.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/data/fake_products_repository.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/presentation/home_app_bar/home_app_bar.dart';
 import 'package:flutter_foundations_knowledge/src/common_widgets/empty_placeholder_widget.dart';
@@ -22,23 +23,27 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Read from data source
-    final product = FakeProductsRepository.instance.getProduct(productId);
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: product == null
-          ? EmptyPlaceholderWidget(
-              message: 'Product not found'.hardcoded,
-            )
-          : CustomScrollView(
-              slivers: [
-                ResponsiveSliverCenter(
-                  padding: const EdgeInsets.all(Sizes.p16),
-                  child: ProductDetails(product: product),
-                ),
-                ProductReviewsList(productId: productId),
-              ],
-            ),
+      body: Consumer(
+        builder: (context, ref, _) {
+          final productsRepository = ref.watch(productsPepositoryProvider);
+          final product = productsRepository.getProduct(productId);
+          return product == null
+              ? EmptyPlaceholderWidget(
+                  message: 'Product not found'.hardcoded,
+                )
+              : CustomScrollView(
+                  slivers: [
+                    ResponsiveSliverCenter(
+                      padding: const EdgeInsets.all(Sizes.p16),
+                      child: ProductDetails(product: product),
+                    ),
+                    ProductReviewsList(productId: productId),
+                  ],
+                );
+        },
+      ),
     );
   }
 }

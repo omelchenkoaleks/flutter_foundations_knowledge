@@ -1,22 +1,24 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_foundations_knowledge/src/routing/app_router.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:flutter_foundations_knowledge/src/features/products/data/fake_products_repository.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/presentation/products_list/product_card.dart';
 import 'package:flutter_foundations_knowledge/src/localization/string_hardcoded.dart';
-import 'package:go_router/go_router.dart';
 
-class ProductsGrid extends StatelessWidget {
+class ProductsGrid extends ConsumerWidget {
   const ProductsGrid({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    // TODO: Read from data source
-    final products = FakeProductsRepository.instance.getProductsList();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final productsRepository = ref.watch(productsPepositoryProvider);
+    final products = productsRepository.getProductsList();
     return products.isEmpty
         ? Center(
             child: Text(
