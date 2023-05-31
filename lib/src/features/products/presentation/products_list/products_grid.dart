@@ -7,6 +7,7 @@ import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_foundations_knowledge/src/common_widgets/error_message_widget.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/data/fake_products_repository.dart';
 import 'package:flutter_foundations_knowledge/src/constants/app_sizes.dart';
 import 'package:flutter_foundations_knowledge/src/features/products/presentation/products_list/product_card.dart';
@@ -17,28 +18,31 @@ class ProductsGrid extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final productsRepository = ref.watch(productsPepositoryProvider);
-    final products = productsRepository.getProductsList();
-    return products.isEmpty
-        ? Center(
-            child: Text(
-              'No products found'.hardcoded,
-              style: Theme.of(context).textTheme.headline4,
+    final productsListValue = ref.watch(productsListFutureProvider);
+    return productsListValue.when(
+      data: (products) => products.isEmpty
+          ? Center(
+              child: Text(
+                'No products found'.hardcoded,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            )
+          : ProductsLayoutGrid(
+              itemCount: products.length,
+              itemBuilder: (_, index) {
+                final product = products[index];
+                return ProductCard(
+                  product: product,
+                  onPressed: () => context.goNamed(
+                    AppRoute.product.name,
+                    params: {'id': product.id},
+                  ),
+                );
+              },
             ),
-          )
-        : ProductsLayoutGrid(
-            itemCount: products.length,
-            itemBuilder: (_, index) {
-              final product = products[index];
-              return ProductCard(
-                product: product,
-                onPressed: () => context.goNamed(
-                  AppRoute.product.name,
-                  params: {'id': product.id},
-                ),
-              );
-            },
-          );
+      error: (e, st) => Center(child: ErrorMessageWidget(e.toString())),
+      loading: () => const Center(child: CircularProgressIndicator()),
+    );
   }
 }
 
